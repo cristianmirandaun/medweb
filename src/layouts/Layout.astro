@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { title, description = 'Medicina basada en evidencia para todos', image = '/og-default.svg' } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title} | Dr. Cristian Miranda</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- OG -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {image && <meta property="og:image" content={image} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@cristianmirandamd" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  </head>
+
+  <body class="bg-white text-gray-900 font-inter antialiased">
+    <!-- NAV -->
+    <nav class="border-b border-gray-100 sticky top-0 bg-white/95 backdrop-blur-sm z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+        <a href="/" class="flex items-center gap-2 font-semibold text-gray-900 hover:text-red-500 transition-colors">
+          <span class="text-red-500 font-bold text-lg">CM</span>
+          <span class="hidden sm:block text-sm">Dr. Cristian Miranda</span>
+        </a>
+        <div class="flex items-center gap-6 text-sm font-medium text-gray-600">
+          <a href="/blog" class="hover:text-red-500 transition-colors">Para pacientes</a>
+          <a href="/medicos" class="hover:text-blue-500 transition-colors">Para médicos</a>
+          <a href="/herramientas" class="hover:text-gray-900 transition-colors hidden sm:block">Herramientas</a>
+          <a href="https://linkedin.com/in/cristian-miranda-med" target="_blank"
+             class="bg-gray-900 text-white px-3 py-1.5 rounded-full text-xs hover:bg-red-500 transition-colors">
+            Seguir
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-100 mt-24 py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-red-500 font-bold text-lg">CM</span>
+              <span class="font-semibold">Dr. Cristian Miranda</span>
+            </div>
+            <p class="text-sm text-gray-500">Medicina basada en evidencia para todos. Médico colombiano en España, preparando el MIR.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-3">Contenido</h4>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li><a href="/blog" class="hover:text-gray-900 transition-colors">Para pacientes</a></li>
+              <li><a href="/medicos" class="hover:text-gray-900 transition-colors">Para médicos</a></li>
+              <li><a href="/herramientas" class="hover:text-gray-900 transition-colors">Herramientas</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold text-sm mb-3">Redes sociales</h4>
+            <ul class="space-y-2 text-sm text-gray-500">
+              <li><a href="https://linkedin.com/in/cristian-miranda-med" target="_blank" class="hover:text-gray-900 transition-colors">LinkedIn</a></li>
+              <li><a href="https://x.com/cristianmirandamd" target="_blank" class="hover:text-gray-900 transition-colors">X / Twitter</a></li>
+              <li><a href="https://instagram.com/cristianmirandamd" target="_blank" class="hover:text-gray-900 transition-colors">Instagram</a></li>
+              <li><a href="https://tiktok.com/@cristianmirandamd" target="_blank" class="hover:text-gray-900 transition-colors">TikTok</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-100 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400 gap-2">
+          <p>© {new Date().getFullYear()} Dr. Cristian Miranda. Contenido educativo, no reemplaza consulta médica.</p>
+          <p>
+            Los enlaces de productos pueden ser de afiliados. Esto no afecta nuestras recomendaciones.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  body { font-family: 'Inter', sans-serif; }
+  .font-lora { font-family: 'Lora', serif; }
+</style>

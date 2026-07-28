@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const blogPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+
+const medicosPosts = (await getCollection('medicos'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<Layout title="Medicina basada en evidencia" description="Dr. Cristian Miranda — Salud basada en evidencia para pacientes y médicos. Médico colombiano en España.">
+
+  <!-- HERO -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
+        <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
+        Actualizado hoy
+      </div>
+      <h1 class="font-lora text-4xl sm:text-5xl font-semibold text-gray-900 leading-tight mb-5">
+        Salud basada en evidencia.<br />
+        <span class="text-red-500">Para todos.</span>
+      </h1>
+      <p class="text-lg text-gray-500 mb-8 max-w-xl leading-relaxed">
+        Médico colombiano en España. Analizo guías clínicas, los estudios que importan y los productos que realmente tienen respaldo científico.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="/blog"
+           class="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-red-500 transition-colors">
+          Para pacientes
+        </a>
+        <a href="/medicos"
+           class="border border-gray-200 text-gray-700 px-5 py-2.5 rounded-full text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-colors">
+          Para médicos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG GENERAL -->
+  {blogPosts.length > 0 && (
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Para pacientes</h2>
+          <p class="text-sm text-gray-500 mt-0.5">Evidencia en lenguaje claro</p>
+        </div>
+        <a href="/blog" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Ver todo →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {blogPosts.map((post) => (
+          <a href={`/blog/${post.id}`} class="group border border-gray-100 rounded-2xl p-5 hover:border-red-200 hover:shadow-sm transition-all">
+            <span class="text-xs text-red-500 font-medium uppercase tracking-wide">{post.data.category}</span>
+            <h3 class="font-semibold text-gray-900 mt-2 mb-2 group-hover:text-red-500 transition-colors leading-snug">{post.data.title}</h3>
+            <p class="text-sm text-gray-500 line-clamp-2">{post.data.description}</p>
+            <p class="text-xs text-gray-400 mt-3">{formatDate(post.data.pubDate)}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="border-t border-gray-100"></div>
+  </div>
+
+  <!-- BLOG MÉDICOS -->
+  {medicosPosts.length > 0 && (
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-xl font-semibold text-gray-900">Para médicos</h2>
+          <p class="text-sm text-gray-500 mt-0.5">Guías, estudios y práctica clínica</p>
+        </div>
+        <a href="/medicos" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Ver todo →</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {medicosPosts.map((post) => (
+          <a href={`/medicos/${post.id}`} class="group border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:shadow-sm transition-all">
+            <span class="text-xs text-blue-500 font-medium uppercase tracking-wide">{post.data.specialty}</span>
+            {post.data.evidenceLevel && (
+              <span class="ml-2 text-xs bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-medium">Evidencia {post.data.evidenceLevel}</span>
+            )}
+            <h3 class="font-semibold text-gray-900 mt-2 mb-2 group-hover:text-blue-500 transition-colors leading-snug">{post.data.title}</h3>
+            <p class="text-sm text-gray-500 line-clamp-2">{post.data.description}</p>
+            <p class="text-xs text-gray-400 mt-3">{formatDate(post.data.pubDate)}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- QUIÉN SOY — breve, sin protagonismo -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="border-t border-gray-100 pt-12 flex flex-col sm:flex-row items-start gap-8">
+      <!-- Avatar CM -->
+      <div class="shrink-0">
+        <div class="w-16 h-16 rounded-2xl bg-gray-900 flex flex-col items-center justify-center gap-0.5">
+          <span class="text-red-500 font-bold text-lg font-serif leading-none">CM</span>
+          <svg viewBox="0 0 40 8" class="w-8 opacity-70">
+            <polyline points="0,4 6,4 8,1 10,7 12,0 14,4 18,4 20,2 22,4 40,4"
+              fill="none" stroke="#FF3A3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Bio -->
+      <div class="flex-1">
+        <h3 class="font-semibold text-gray-900 mb-1">Dr. Cristian Miranda</h3>
+        <p class="text-sm text-gray-500 leading-relaxed max-w-xl">
+          Médico colombiano en España, preparando el MIR 2026. Escribo sobre salud basada en evidencia porque creo que la información médica rigurosa debería llegar a todos, sin bulos ni sensacionalismo. Todo lo que publico aquí tiene referencia científica.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-4">
+          <a href="https://linkedin.com/in/cristian-miranda-med" target="_blank"
+             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">LinkedIn</a>
+          <a href="https://x.com/cristianmirandamd" target="_blank"
+             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">X / Twitter</a>
+          <a href="https://instagram.com/cristianmirandamd" target="_blank"
+             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">Instagram</a>
+          <a href="https://tiktok.com/@cristianmirandamd" target="_blank"
+             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="bg-gray-50 rounded-3xl p-8 sm:p-12 text-center">
+      <h2 class="font-lora text-2xl sm:text-3xl font-semibold text-gray-900 mb-3">
+        Un artículo con evidencia real, cada semana.
+      </h2>
+      <p class="text-gray-500 mb-6 max-w-md mx-auto">Sin bulos. Sin sensacionalismo. Solo lo que dice la ciencia.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
+        <input type="email" placeholder="tu@email.com"
+               class="border border-gray-200 rounded-full px-4 py-2.5 text-sm flex-1 outline-none focus:border-gray-400" />
+        <button class="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-red-500 transition-colors whitespace-nowrap">
+          Suscribirse
+        </button>
+      </div>
+    </div>
+  </section>
+
+</Layout>

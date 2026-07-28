@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0D0D0D"/>
+  <!-- Red accent line top -->
+  <rect x="0" y="0" width="1200" height="4" fill="#FF3A3A"/>
+  <!-- CM logo -->
+  <rect x="60" y="60" width="80" height="80" rx="16" fill="#1A0808"/>
+  <text x="100" y="95" font-family="Georgia, serif" font-size="28" font-weight="700"
+        fill="#FF3A3A" text-anchor="middle" dominant-baseline="middle">CM</text>
+  <polyline points="68,112 78,112 81,106 84,118 87,101 90,112 96,112 99,108 102,112 112,112"
+            fill="none" stroke="#FF3A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Main text -->
+  <text x="60" y="260" font-family="Georgia, serif" font-size="64" font-weight="600" fill="#FFFFFF">Salud basada</text>
+  <text x="60" y="340" font-family="Georgia, serif" font-size="64" font-weight="600" fill="#FFFFFF">en evidencia.</text>
+  <text x="60" y="420" font-family="Georgia, serif" font-size="64" font-weight="600" fill="#FF3A3A">Para todos.</text>
+  <!-- Subtitle -->
+  <text x="60" y="510" font-family="Arial, sans-serif" font-size="28" fill="#888888">Dr. Cristian Miranda · drcristianmiranda.com</text>
+  <!-- ECG decorative -->
+  <polyline points="900,315 940,315 955,270 970,360 985,240 1000,315 1030,315 1050,285 1070,315 1140,315"
+            fill="none" stroke="#FF3A3A" stroke-width="3" opacity="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

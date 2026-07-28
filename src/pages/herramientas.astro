@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Herramientas médicas" description="Calculadoras clínicas, scores y protocolos. Gratis, basados en evidencia.">
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-12 pb-4">
+    <h1 class="font-lora text-3xl sm:text-4xl font-semibold text-gray-900 mb-3">Herramientas</h1>
+    <p class="text-gray-500 max-w-xl">Calculadoras clínicas, scores validados y protocolos. Próximamente.</p>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {[
+        { name: 'CHA₂DS₂-VASc', desc: 'Riesgo tromboembólico en fibrilación auricular', tag: 'Cardiología', soon: true },
+        { name: 'Score CURB-65', desc: 'Gravedad de neumonía adquirida en la comunidad', tag: 'Neumología', soon: true },
+        { name: 'Wells PE', desc: 'Probabilidad pretest de tromboembolismo pulmonar', tag: 'Urgencias', soon: true },
+        { name: 'CHADS Score', desc: 'Indicación de anticoagulación en FA', tag: 'Cardiología', soon: true },
+        { name: 'HEART Score', desc: 'Riesgo cardiovascular en dolor torácico', tag: 'Urgencias', soon: true },
+        { name: 'GFR / CKD-EPI', desc: 'Estimación del filtrado glomerular', tag: 'Nefrología', soon: true },
+      ].map(tool => (
+        <div class="border border-gray-100 rounded-2xl p-5 opacity-60">
+          <span class="text-xs text-gray-400 font-medium uppercase tracking-wide">{tool.tag}</span>
+          <h3 class="font-semibold text-gray-900 mt-2 mb-1">{tool.name}</h3>
+          <p class="text-sm text-gray-500">{tool.desc}</p>
+          <span class="inline-block mt-3 text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded">Próximamente</span>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

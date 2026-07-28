@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0D0D0D"/>
+  <text x="32" y="28" font-family="Georgia, serif" font-size="18" font-weight="700"
+        fill="#FF3A3A" text-anchor="middle" dominant-baseline="middle">CM</text>
+  <!-- ECG line -->
+  <polyline points="8,42 18,42 21,36 24,48 27,33 30,42 36,42 39,38 42,42 56,42"
+            fill="none" stroke="#FF3A3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

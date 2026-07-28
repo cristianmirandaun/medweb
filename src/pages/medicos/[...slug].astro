@@ -1,0 +1,79 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('medicos');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 pt-12 pb-20">
+
+    <nav class="text-xs text-gray-400 mb-8 flex items-center gap-1.5">
+      <a href="/" class="hover:text-gray-700 transition-colors">Inicio</a>
+      <span>/</span>
+      <a href="/medicos" class="hover:text-gray-700 transition-colors">Para médicos</a>
+      <span>/</span>
+      <span class="text-blue-500">{post.data.specialty}</span>
+    </nav>
+
+    <header class="mb-10">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xs text-blue-500 font-medium uppercase tracking-wide">{post.data.specialty}</span>
+        {post.data.evidenceLevel && (
+          <span class="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded font-medium">Evidencia {post.data.evidenceLevel}</span>
+        )}
+      </div>
+      <h1 class="font-lora text-3xl sm:text-4xl font-semibold text-gray-900 mt-2 mb-4 leading-tight">{post.data.title}</h1>
+      <p class="text-lg text-gray-500 leading-relaxed mb-5">{post.data.description}</p>
+      {post.data.guidelines && post.data.guidelines.length > 0 && (
+        <div class="flex flex-wrap gap-2 mb-4">
+          {post.data.guidelines.map(g => (
+            <span class="text-xs border border-blue-100 text-blue-500 px-2.5 py-1 rounded-full">{g}</span>
+          ))}
+        </div>
+      )}
+      <div class="flex items-center gap-3 text-sm text-gray-400">
+        <span class="font-medium text-gray-700">{post.data.author}</span>
+        <span>·</span>
+        <time>{formatDate(post.data.pubDate)}</time>
+      </div>
+    </header>
+
+    <div class="border-t border-gray-100 mb-10"></div>
+
+    <div class="prose prose-gray prose-lg max-w-none
+      prose-headings:font-lora prose-headings:font-semibold prose-headings:text-gray-900
+      prose-p:text-gray-600 prose-p:leading-relaxed
+      prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-gray-900 prose-strong:font-semibold
+      prose-blockquote:border-blue-500 prose-blockquote:text-gray-500
+      prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1 prose-code:rounded
+      prose-table:text-sm prose-th:bg-gray-50 prose-th:font-semibold
+      prose-ul:text-gray-600 prose-ol:text-gray-600">
+      <Content />
+    </div>
+
+    <div class="mt-14 bg-blue-50 rounded-2xl p-5 text-sm text-blue-800">
+      <strong>Para médicos:</strong> Este artículo está basado en guías clínicas actualizadas y literatura indexada.
+      Revisa siempre la versión más reciente de las guías oficiales antes de aplicar en práctica clínica.
+    </div>
+
+    <div class="mt-10">
+      <a href="/medicos" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">← Todos los artículos para médicos</a>
+    </div>
+
+  </article>
+</Layout>
