@@ -16,6 +16,10 @@ const { Content } = await render(post);
 function formatDate(date: Date) {
   return date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
 }
+
+const products = post.data.affiliateProducts ?? [];
+const topProduct = products[0];
+const restProducts = products.slice(1);
 ---
 
 <Layout title={post.data.title} description={post.data.description}>
@@ -39,8 +43,46 @@ function formatDate(date: Date) {
         <span class="font-medium text-gray-700">{post.data.author}</span>
         <span>·</span>
         <time>{formatDate(post.data.pubDate)}</time>
+        {products.length > 0 && (
+          <>
+            <span>·</span>
+            <a href="#recomendaciones" class="text-amber-600 font-medium hover:underline">
+              Ver {products.length} recomendación{products.length > 1 ? 'es' : ''} →
+            </a>
+          </>
+        )}
       </div>
     </header>
+
+    <!-- PRODUCTO TOP — encima del artículo, muy visible -->
+    {topProduct && (
+      <a href={topProduct.link} target="_blank" rel="noopener noreferrer nofollow"
+         class="block mb-10 rounded-2xl border-2 border-amber-400 bg-amber-50 p-5 hover:bg-amber-100 transition-colors group">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-bold uppercase tracking-wide text-amber-700 bg-amber-200 px-2 py-0.5 rounded">
+                Mejor opción según evidencia
+              </span>
+            </div>
+            <h3 class="font-semibold text-gray-900 text-lg mb-1 group-hover:text-amber-700 transition-colors">
+              {topProduct.name}
+            </h3>
+            <p class="text-sm text-gray-600 mb-2">{topProduct.description}</p>
+            <span class="text-xs text-green-700 font-medium">✓ {topProduct.evidence}</span>
+          </div>
+          <div class="text-right shrink-0 flex flex-col items-end gap-2">
+            {topProduct.price && (
+              <span class="text-lg font-bold text-gray-900">{topProduct.price}</span>
+            )}
+            <span class="inline-flex items-center gap-1.5 bg-amber-500 text-white text-sm font-semibold px-5 py-2.5 rounded-xl group-hover:bg-amber-600 transition-colors whitespace-nowrap">
+              Ver en Amazon →
+            </span>
+            <span class="text-xs text-gray-400">Enlace de afiliado</span>
+          </div>
+        </div>
+      </a>
+    )}
 
     <div class="border-t border-gray-100 mb-10"></div>
 
@@ -52,46 +94,58 @@ function formatDate(date: Date) {
       prose-strong:text-gray-900 prose-strong:font-semibold
       prose-blockquote:border-red-500 prose-blockquote:text-gray-500
       prose-code:text-red-600 prose-code:bg-red-50 prose-code:px-1 prose-code:rounded
-      prose-ul:text-gray-600 prose-ol:text-gray-600">
+      prose-ul:text-gray-600 prose-ol:text-gray-600
+      prose-table:text-sm prose-th:bg-gray-50">
       <Content />
     </div>
 
-    <!-- Productos afiliados -->
-    {post.data.affiliateProducts && post.data.affiliateProducts.length > 0 && (
-      <div class="mt-14 border-t border-gray-100 pt-10">
-        <h2 class="font-lora text-xl font-semibold text-gray-900 mb-2">Recomendaciones con evidencia</h2>
-        <p class="text-sm text-gray-400 mb-6">Seleccionados según validación clínica. Los enlaces son de afiliados — no cambia nuestro criterio.</p>
-        <div class="space-y-4">
-          {post.data.affiliateProducts.map((product) => (
-            <div class="border border-gray-100 rounded-2xl p-5 hover:border-amber-200 transition-colors">
-              <div class="flex items-start justify-between gap-4">
-                <div class="flex-1">
-                  <h3 class="font-semibold text-gray-900 mb-1">{product.name}</h3>
-                  <p class="text-sm text-gray-500 mb-2">{product.description}</p>
-                  <span class="text-xs bg-green-50 text-green-700 px-2 py-0.5 rounded font-medium">{product.evidence}</span>
-                </div>
-                <div class="text-right shrink-0">
-                  {product.price && <p class="text-sm font-semibold text-gray-900 mb-2">{product.price}</p>}
-                  <a href={product.link} target="_blank" rel="noopener noreferrer nofollow"
-                     class="inline-block bg-amber-500 text-white text-xs font-medium px-4 py-2 rounded-full hover:bg-amber-600 transition-colors">
-                    Ver en Amazon
-                  </a>
-                </div>
+    <!-- TODOS LOS PRODUCTOS — después del artículo -->
+    {products.length > 0 && (
+      <div id="recomendaciones" class="mt-14">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="flex-1 h-px bg-gray-200"></div>
+          <h2 class="font-lora text-xl font-semibold text-gray-900 whitespace-nowrap">
+            Recomendaciones con evidencia
+          </h2>
+          <div class="flex-1 h-px bg-gray-200"></div>
+        </div>
+        <p class="text-sm text-gray-400 mb-6 text-center">
+          Seleccionados por respaldo científico, no por patrocinio. Los enlaces son de afiliados — no cambia nuestro criterio.
+        </p>
+
+        <div class="space-y-3">
+          {products.map((product, i) => (
+            <a href={product.link} target="_blank" rel="noopener noreferrer nofollow"
+               class="flex items-center gap-4 border border-gray-100 rounded-2xl p-4 hover:border-amber-300 hover:shadow-sm transition-all group">
+              <!-- Ranking -->
+              <div class="shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-sm font-bold text-gray-500 group-hover:bg-amber-100 group-hover:text-amber-700 transition-colors">
+                {i + 1}
               </div>
-            </div>
+              <!-- Info -->
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-gray-900 group-hover:text-amber-700 transition-colors">{product.name}</div>
+                <div class="text-sm text-gray-500 truncate">{product.description}</div>
+                <div class="text-xs text-green-700 mt-0.5">✓ {product.evidence}</div>
+              </div>
+              <!-- Precio + CTA -->
+              <div class="shrink-0 text-right">
+                {product.price && <div class="font-bold text-gray-900 text-sm">{product.price}</div>}
+                <div class="text-xs text-amber-600 font-medium mt-1">Ver en Amazon →</div>
+              </div>
+            </a>
           ))}
         </div>
       </div>
     )}
 
     <!-- Aviso médico -->
-    <div class="mt-14 bg-gray-50 rounded-2xl p-5 text-sm text-gray-500">
-      <strong class="text-gray-700">Aviso médico:</strong> Este artículo es contenido educativo basado en evidencia científica actualizada.
-      No reemplaza la consulta con tu médico. Ante cualquier síntoma o duda, consulta a un profesional de salud.
+    <div class="mt-12 bg-gray-50 rounded-2xl p-5 text-sm text-gray-500">
+      <strong class="text-gray-700">Aviso médico:</strong> Contenido educativo basado en evidencia científica actualizada.
+      No reemplaza la consulta con tu médico.
     </div>
 
     <!-- Volver -->
-    <div class="mt-10">
+    <div class="mt-8">
       <a href="/blog" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">← Todos los artículos</a>
     </div>
 
