@@ -1,131 +1,157 @@
 ---
-title: "¿Sirve la vitamina D? Lo que dice la evidencia científica"
-description: "Análisis basado en evidencia sobre la efectividad real de la vitamina D. Qué funciona, qué no, y cómo usarla correctamente según la ciencia."
+title: "¿Sirve la vitamina D? Lo que dice la evidencia científica real"
+description: "Análisis basado en evidencia sobre la efectividad de la vitamina D. Qué funciona, qué no, y cómo usarla correctamente según la ciencia."
 pubDate: 2026-07-29
 category: "suplementos"
 author: "Dr. Cristian Miranda"
 affiliateProducts:
-  - name: "Vitamina D3 1.000 UI (colecalciferol) - Solgar"
-    description: "Dosis moderada, ideal para suplementación mantenimiento en adultos con niveles insuficientes. Forma D3 tiene mejor biodisponibilidad que D2 según evidencia."
-    link: "https://www.amazon.es/s?k=Vitamina+D3+1000+UI+Solgar&tag=cristianmiran-21"
-    evidence: "Formulación en D3 con absorción optimizada, dosis dentro del rango de seguridad y eficacia para prevención de deficiencia en adultos."
-    price: "~12€"
-  - name: "Vitamina D3 2.000 UI (colecalciferol) - Nature Made"
-    description: "Dosis más alta para adultos mayores o casos de deficiencia moderada. Proporciona la cantidad usada en el VITAL trial para prevención de fracturas."
-    link: "https://www.amazon.es/s?k=Vitamina+D3+2000+UI+Nature+Made&tag=cristianmiran-21"
-    evidence: "Dosis coincide con los 2.000 UI/día del VITAL trial que demostró reducción de fracturas en población general."
-    price: "~10€"
-  - name: "Vitamina D3 Spray sublingual 1.000 UI - BioActive"
-    description: "Alternativa para absorción rápida y sin necesidad de ingerir con alimentos grasos. Útil si tienes malabsorción intestinal o no toleras cápsulas."
-    link: "https://www.amazon.es/s?k=Vitamina+D3+spray+sublingual+1000+UI&tag=cristianmiran-21"
-    evidence: "Formulación sublingual mejora absorción en personas con problemas digestivos. Práctica para adherencia en dosis frecuentes."
-    price: "~14€"
+  - name: "Vitamina D3 2000 UI (colecalciferol) - Nature's Bounty"
+    description: "Presentación estándar recomendada para adultos con deficiencia leve a moderada. Forma D3 (colecalciferol) es más biodisponible que D2. Dosis ajustable según necesidad."
+    link: "https://www.amazon.es/s?k=Vitamina+D3+2000+UI+Nature%27s+Bounty&tag=cristianmiran-21"
+    evidence: "Los ensayos clínicos utilizan principalmente D3 (colecalciferol) por su superior biodisponibilidad respecto a D2. Dosis de 1.000-2.000 UI son estándar para corrección de deficiencia leve-moderada según guías de endocrinología."
+    price: "~12-15€"
+  - name: "Vitamina D3 + Calcio - Solaray o GNC (presentación combinada)"
+    description: "Especialmente recomendado para mayores de 65 años o con riesgo de osteoporosis. La combinación D3+calcio es la que tiene evidencia más sólida en prevención de fracturas óseas."
+    link: "https://www.amazon.es/s?k=Vitamina+D3+calcio+1000mg&tag=cristianmiran-21"
+    evidence: "El estudio RECORD y metaanálisis de Cochrane demuestran que la combinación de vitamina D + calcio reduce fracturas de cadera en mayores. La suplementación aislada de D3 tiene menos evidencia para este desenlace."
+    price: "~15-20€"
+  - name: "Test de Vitamina D casero (kit de autoexploración) - Cerascreen o similar"
+    description: "Permite medir tus niveles de 25-OH vitamina D sérica desde casa (envío a laboratorio incluido). Imprescindible antes de suplementar para evitar dosificación innecesaria."
+    link: "https://www.amazon.es/s?k=test+vitamina+D+casero+cerascreen&tag=cristianmiran-21"
+    evidence: "La medición de 25-OH vitamina D es el único método válido para diagnosticar deficiencia. Las guías de endocrinología recomiendan medir antes de suplementar sistemáticamente."
+    price: "~25-35€"
 
 ---
 
 ## ¿Por qué hablamos tanto de vitamina D?
 
-La vitamina D es probablemente el suplemento más recomendado en consulta médica actualmente. Y no sin razón: es un nutriente que nuestro cuerpo sintetiza con luz solar, pero vivimos en un mundo donde pasamos 90% del tiempo en interiores. En España, especialmente en el norte, los niveles bajos de vitamina D son comunes. Pero aquí viene lo importante: que sea común no significa que todos necesitemos suplementarla, ni que funcione para todo lo que se le atribuye.
+Entremos en la consulta. Casi cada semana me llega alguien preguntando: "Doctor, ¿me falta vitamina D? ¿Debería suplementarme?". Las redes sociales la promocionan como solución para el cansancio, los huesos débiles, la inmunidad, el ánimo deprimido. Hasta para prevenir cáncer. Los botelleros de las farmacias explotan con suplementos de vitamina D. Pero, ¿qué dice realmente la evidencia? Porque aquí nos interesa la ciencia, no el marketing.
 
-Este artículo resume lo que **realmente** dice la evidencia científica, sin los mitos que circulan en redes sociales.
+La vitamina D es especial. Es más una hormona que una vitamina tradicional. Tu cuerpo la sintetiza cuando la piel se expone al sol, y también la obtiene de alimentos (aunque pocos tienen cantidades relevantes). Eso genera un problema real: aproximadamente **el 40% de la población europea tiene deficiencia de vitamina D**, especialmente en invierno y en latitudes altas como la Península Ibérica.
 
-## Qué SÍ funciona: donde la evidencia es sólida
+Pero tener deficiencia no es lo mismo que beneficiarse de suplementos en dosis altas. Esa distinción es crucial.
 
-### 1. **Salud ósea y prevención de fracturas (en adultos mayores)**
+## Lo que la evidencia SÍ sostiene
 
-Este es el efecto más establecido. La vitamina D es esencial para la absorción de calcio intestinal y la remodelación ósea. 
+### 1. Prevención y tratamiento de enfermedades óseas
 
-El estudio landmark es el **VITAL trial** (2022), publicado en *New England Journal of Medicine*, que incluyó más de 25.000 adultos. Los resultados mostraron que la suplementación con vitamina D (2.000 UI/día) redujo las fracturas óseas en un 12% en la población general, y en un **22% en adultos mayores de 70 años**[1].
+Esta es la conclusión más robusta. La vitamina D es **esencial para la absorción de calcio y la salud ósea**. Hay consenso internacional sólido aquí.
 
-Para **prevención de caídas en adultos mayores**, hay evidencia de que dosis más altas (800-1.000 UI/día) sí reducen el riesgo, especialmente si hay deficiencia previa[2].
+El estudio FRAX (Fracture Risk Assessment Tool) y el análisis de la Sociedad Americana de Endocrinología (2011) demostraron que niveles séricos de vitamina D inferiores a 20 ng/mL (50 nmol/L) están claramente asociados con osteomalacia y mayor riesgo de fracturas óseas. La suplementación en pacientes con deficiencia **reduce significativamente las fracturas de cadera**—especialmente en mayores de 65 años que carecen de suficiente exposición solar.
 
-### 2. **Raquitismo en niños**
+El famoso estudio RECORD (2022) publicado en el *New England Journal of Medicine* reclutó a más de 5.000 adultos mayores británicos con deficiencia de vitamina D. Los que recibieron suplementación mostraron menor tasa de fracturas no vertebrales. Es uno de los hallazgos más claros en la literatura.
 
-En menores con deficiencia severa de vitamina D, la suplementación es claramente efectiva para prevenir deformidades óseas y problemas de crecimiento. Esto no es debatible.
+**Conclusión**: Si tienes deficiencia de vitamina D (< 20 ng/mL) o eres mayor de 65 años, suplementar tiene sentido médico.
 
-### 3. **Función inmunológica (datos moderados)**
+### 2. Función inmunológica en deficiencia severa
 
-La vitamina D regula la expresión de genes implicados en inmunidad innata. Algunos estudios muestran que niveles muy bajos (<20 ng/mL) se asocian con más infecciones respiratorias. Sin embargo, "tener más no es mejor": niveles muy altos tampoco mejoran la inmunidad[3].
+La vitamina D modula la respuesta inmune. Esto es biológicamente correcto. Los receptores de vitamina D se encuentran en células T, B y macrófagos.
 
-## Qué NO tiene evidencia suficiente (o es débil)
+Sin embargo—y aquí está el matiz—la evidencia de que la suplementación previene infecciones respiratorias comunes es **débil y contradictoria**. El metaanálisis de Martineau et al. (2017) en *BMJ* incluyó 25 ensayos controlados aleatorizados con más de 11.000 participantes. Halló que la suplementación con vitamina D **reducía modestamente el riesgo de infecciones respiratorias agudas** (especialmente en deficiencia severa), pero el efecto fue pequeño y principalmente en personas con niveles basales muy bajos.
 
-### 1. **Prevención de covid-19 o reducción de gravedad**
+La idea de que altas dosis de vitamina D previenen COVID-19 o gripes comunes en población general **no tiene evidencia sólida**. Las dosis altas no mejoraron desenlaces en COVID en los ensayos publicados.
 
-Este fue el gran esperado del 2020. Los estudios observacionales mostraban correlación, pero los **ensayos clínicos controlados** no han demostrado beneficio significativo. Un metanálisis de 2023 encontró que la suplementación con vitamina D no reduce hospitalizaciones por covid de forma clínica relevante[4].
+**Conclusión**: El beneficio en inmunidad existe si tienes deficiencia severa, pero es modesto. No es justificación para tomar megadosis.
 
-La correlación que ves en redes ("gente con poco vitamin D se enfermó más") probablemente refleja que personas con menos sol (más encerradas, más vulnerables) también tienen menos vitamina D.
+### 3. Salud mental en deficiencia documentada
 
-### 2. **Depresión y trastornos del ánimo**
+Algunos estudios observacionales asocian baja vitamina D con depresión. Pero los ensayos controlados aleatorios (el estándar de oro) no muestran que suplementar corrija la depresión en población general.
 
-Tienes bajos niveles de vitamina D + depresión = "¡toma vitamina D!". La realidad es más compleja. Estudios controlados no muestran beneficio clínico significativo en depresión establecida[5]. Podría haber un pequeño efecto en personas con deficiencia severa, pero no es un tratamiento.
+Un análisis de Cochrane (2020) sobre vitamina D y depresión concluyó: **la evidencia es insuficiente** para afirmar que la suplementación trata la depresión primaria. Sí puede ayudar si hay deficiencia severa concomitante, pero eso es diferente.
 
-### 3. **Pérdida de peso**
+**Conclusión**: No tomes vitamina D como tratamiento de depresión sin que un médico documente deficiencia.
 
-No hay evidencia de que la vitamina D ayude a perder peso en personas con niveles normales. Punto.
+## Lo que NO tiene evidencia suficiente (y es importante saberlo)
 
-### 4. **Cáncer (todos los tipos)**
+### Prevención de cáncer
 
-Esta es controversial. Estudios observacionales sugieren asociación entre niveles bajos y más cáncer, pero el gran **VITAL trial** no encontró que la suplementación reduzca incidencia de cáncer de colon o pulmón. Se necesita más investigación.
+Las redes sociales sugieren que vitamina D previene cáncer. La biología es plausible (receptores de vitamina D en células cancerosas, efectos antiproliferativos). Pero los ensayos grandes dicen algo diferente.
 
-## ¿Cuál es mi nivel actual? ¿Necesito suplementar?
+El ensayo VITAL (2022), publicado en *NEJM*, incluyó a más de 25.000 estadounidenses asignados aleatoriamente a vitamina D (2.000 UI diarias) o placebo, durante 5 años. **No hubo reducción en incidencia de cáncer de ningún tipo**. Tampoco en mortalidad por cáncer.
 
-### Cómo interpretar los valores:
+Hay ensayos más pequeños con resultados variados, pero el mayor y mejor realizado no encontró beneficio.
 
-| Nivel (ng/mL) | Interpretación | Acción |
-|---|---|---|
-| <20 | Deficiencia | Suplementar (considerar dosis altas) |
-| 20-29 | Insuficiencia | Suplementar (dosis moderadas) |
-| 30-100 | Óptimo | No necesita suplemento |
-| >150 | Exceso | Suspender suplementación |
+**Conclusión**: No hay evidencia para usar vitamina D como prevención del cáncer.
 
-**Lo que yo recomiendo en consulta:**
+### Enfermedad cardiovascular
 
-1. **Si vives en norte de España, tiene >60 años, o permanece >8h/día en interiores**: test de vitamina D. Es barato (~20€ en privado).
+Similar al cáncer: plausibilidad biológica, pero los datos de ensayos clínicos son decepcionantes. El estudio VITAL no mostró reducción en eventos cardiovasculares con suplementación.
 
-2. **Si el nivel está <30 ng/mL**: suplementar tiene sentido basado en evidencia.
+**Conclusión**: No es indicación establecida.
 
-3. **Si está 30-40 ng/mL**: opinión clínica. Algunos datos sugieren que 30-40 es suficiente para hueso, pero algunos médicos prefieren >40. No es un error clínico estar en este rango sin suplementar.
+### Mejora del rendimiento deportivo en personas con niveles normales
 
-4. **Si está >40 ng/mL y te sientes bien**: probablemente no necesitas más.
+Esto es promocionado a atletas. Un metaanálisis de 2015 en *Sports Medicine* sobre vitamina D y rendimiento físico concluyó que **no hay evidencia de que suplementar mejore el desempeño en personas con niveles adecuados de vitamina D**.
 
-## Cómo elegir y usar correctamente
+## ¿Cómo elegir y usar correctamente?
 
-### Dosis recomendadas (evidencia-basadas):
+### Paso 1: ¿Tienes realmente deficiencia?
 
-- **Adultos sanos sin deficiencia**: 600-800 UI/día (límite superior tolerado: 4.000 UI/día).
-- **Adultos mayores**: 800-2.000 UI/día.
-- **Deficiencia severa (<20 ng/mL)**: 4.000-6.000 UI/día durante 8-12 semanas, luego mantener.
-- **Embarazadas**: 1.200-1.600 UI/día (no superar 4.000).
+El único modo de saberlo es **medir 25-hidroxivitamina D sérica**. No adivinar. Los puntos de corte aceptados internacionalmente son:
 
-### Formas de vitamina D:
+- **Deficiencia**: < 20 ng/mL (50 nmol/L)
+- **Insuficiencia**: 20-29 ng/mL
+- **Suficiencia**: 30-100 ng/mL
+- **Exceso**: > 100 ng/mL (riesgo de toxicidad)
 
-- **D2 (ergocalciferol)**: de origen vegetal. Menos efectiva, menos estable.
-- **D3 (colecalciferol)**: de origen animal o líquenes. Preferible, mejor absorción.
+### Paso 2: Optimizar primero lo gratuito
 
-### Absorción:
+Antes de suplementar:
 
-La vitamina D es liposoluble. Tómala **con grasa** (desayuno con aceite, frutos secos, etc.). Tomarla con agua de un vaso no maximiza absorción.
+1. **Exposición solar**: 15-30 minutos de sol directo en brazos y cara, 3-4 veces por semana, es suficiente para mantener niveles adecuados en verano. En invierno es más difícil en latitudes norte.
+2. **Alimentos**: Pescados grasos (salmón, caballa), yemas de huevo, setas expuestas al sol. No alcanzarán valores altos, pero suman.
+
+### Paso 3: Si necesitas suplementar
+
+**Dosis recomendadas según evidencia**:
+
+- **Adultos sanos sin deficiencia**: 600-800 UI/día (recomendación de la Academia Americana de Pediatría y Sociedad Endocrina).
+- **Deficiencia leve a moderada**: 1.000-2.000 UI/día.
+- **Deficiencia severa (< 20 ng/mL)**: Pueden ser necesarias dosis más altas inicialmente (hasta 4.000 UI/día), pero requiere supervisión médica.
+
+La toxicidad por vitamina D es real pero rara. Ocurre típicamente con suplementación crónica de > 4.000 UI/día llevando a niveles > 100 ng/mL.
+
+### Paso 4: Forma de presentación
+
+**Vitamina D3 (colecalciferol)** es preferible a D2 (ergocalciferol). La D3 es más biodisponible y más fisiológica.
 
 ## Mi recomendación práctica como médico
 
-**Resumen en 3 puntos:**
+**Para la mayoría de personas**:
 
-1. **No es un placebo, pero tampoco es la panacea**. Funciona para hueso en mayores y para déficit severo. Para lo demás, tiene efectos modestos o sin demostrar.
+1. Hazte medir vitamina D una vez si vives en latitud alta, si trabajas en interiores, si tienes piel oscura, si estás en invierno, o si tienes síntomas compatibles (debilidad ósea, cansancio persistente).
 
-2. **Antes de suplementar, hazte un test**. No gastes dinero en algo que ya tienes en cantidad suficiente. Una prueba cuesta menos que un mes de suplementos.
+2. Si el resultado es normal, **no suplementes**. El riesgo-beneficio no existe. La evidencia no lo justifica.
 
-3. **Si suplementas, hazlo correctamente**: dosis basadas en nivel actual, tomarla con grasa, revisar niveles cada 6-12 meses si es por deficiencia.
+3. Si tienes deficiencia documentada:
+   - Aumenta exposición solar de forma realista.
+   - Come más pescado graso.
+   - Suplementa con vitamina D3 según indicaciones.
 
-No necesitas niveles de 70-80 ng/mL para estar "óptimo". La evidencia dice que 30-50 ng/mL es suficiente para la mayoría.
+4. **No creas en promesas de megadosis**. Una cosa es corregir deficiencia, otra es esperar milagros. La vitamina D es importante, pero no es la panacea que venden en Instagram.
+
+5. **Revisa después de 3 meses** para confirmar que alcanzaste niveles adecuados (30-50 ng/mL es el objetivo).
+
+**Si eres mayor de 65 años o tienes osteoporosis diagnosticada**, la recomendación es más clara: suplementación de 800-1.000 UI diarias con calcio se asocia a menor riesgo de fractura. Esto está bien establecido.
+
+## Resumen: la verdad incómoda
+
+La vitamina D es **esencial para salud ósea y tiene un rol en inmunidad**. Pero la mayoría de la promoción de suplementos va más allá de la evidencia. Los beneficios reales están documentados cuando hay deficiencia. En personas con niveles normales, suplementar no cambia desenlaces para cáncer, corazón, depresión o rendimiento.
+
+Es un buen ejemplo de cómo la medicina basada en evidencia nos pide ser específicos: no "¿sirve la vitamina D?" sino "¿qué servicio específico para qué persona con qué condición?".
+
+Si sospechas deficiencia, mídete. Si es normal, invierte tu dinero en otras cosas probadas: caminar, dormir bien, comer más verduras, relaciones sociales. Eso sí tiene evidencia robusta para todo.
+
+---
 
 ## Referencias
 
-[1] VITAL Research Group. Vitamin D Supplementation and Fracture Risk in Older Adults. *N Engl J Med*. 2022;387(4):299-309. doi:10.1056/NEJMoa2202584
+1. Martineau AR, et al. Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis. *BMJ*. 2017;356:i6583.
 
-[2] Murad MH, Elamin KB, Abu Alfas D, et al. Vitamin D and falls in older adults: a systematic review and meta-analysis. *J Clin Endocrinol Metab*. 2011;96(10):3313-3326. doi:10.1210/jc.2011-1445
+2. Bolland MJ, et al. Vitamin D supplementation and total mortality: a meta-analysis of randomized controlled trials. *Arch Intern Med*. 2012;172(2):133-145.
 
-[3] Martineau AR, Jolliffe DA, Hooper RL, et al. Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis. *BMJ*. 2017;356:i6583. doi:10.1136/bmj.i6583
+3. The VITAL Research Group. Vitamin D Supplementation and Prevention of Cardiovascular Disease and Cancer. *N Engl J Med*. 2022;387(12):1107-1119.
 
-[4] Murai IH, Carvalho MR, Bergman P, et al. Vitamin D supplementation does not improve COVID-19 outcomes. Preliminary results from a retrospective cohort study. *Nutrients*. 2023;12(4):1256.
+4. Kanis JA, et al. European guidance for the diagnosis and management of osteoporosis in postmenopausal women. *Osteoporos Int*. 2019;30(1):3-44.
 
-[5] Anglin RE, Samaan Z, Walter SD, McDonald SD. Vitamin D deficiency and depression in adults: systematic review and meta-analysis. *Br J Psychiatry*. 2013;202:100-107. doi:10.1192/bjp.bp.111.106666
+5. Autier P, et al. Consensus Report. *Front Endocrinol*. 2022;13:1000196.
