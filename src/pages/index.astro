@@ -11,140 +11,184 @@ const medicosPosts = (await getCollection('medicos'))
   .slice(0, 3);
 
 function formatDate(date: Date) {
-  return date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+  return date.toLocaleDateString('es-ES', { day: 'numeric', month: 'short' });
 }
+
+const featuredPost = blogPosts[0];
+const restPosts = blogPosts.slice(1, 5);
 ---
 
-<Layout title="Medicina basada en evidencia" description="Dr. Cristian Miranda — Salud basada en evidencia para pacientes y médicos. Médico colombiano en España.">
+<Layout title="Medicina basada en evidencia">
 
   <!-- HERO -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-20">
-    <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 bg-red-50 text-red-600 text-xs font-medium px-3 py-1.5 rounded-full mb-6">
-        <span class="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></span>
-        Actualizado hoy
+  <section class="max-w-5xl mx-auto px-5 pt-16 pb-14">
+    <div class="max-w-2xl">
+      <div class="inline-flex items-center gap-2 text-xs font-medium text-red-600 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+        Actualizado hoy · {new Date().toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}
       </div>
-      <h1 class="font-lora text-4xl sm:text-5xl font-semibold text-gray-900 leading-tight mb-5">
-        Salud basada en evidencia.<br />
-        <span class="text-red-500">Para todos.</span>
+      <h1 class="font-lora text-4xl sm:text-5xl text-gray-900 leading-[1.15] mb-5">
+        Salud basada en<br/>evidencia.<br/>
+        <em class="not-italic text-red-500">Para todos.</em>
       </h1>
-      <p class="text-lg text-gray-500 mb-8 max-w-xl leading-relaxed">
-        Médico colombiano en España. Analizo guías clínicas, los estudios que importan y los productos que realmente tienen respaldo científico.
+      <p class="text-base sm:text-lg text-gray-500 leading-relaxed mb-8 max-w-lg">
+        Médico colombiano en España. Analizo estudios, guías clínicas y productos de salud para que tomes decisiones con información real.
       </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="/blog"
-           class="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-red-500 transition-colors">
+      <div class="flex items-center gap-3">
+        <a href="/blog" class="bg-gray-900 text-white text-sm font-medium px-5 py-2.5 rounded-full hover:bg-red-500 transition-colors">
           Para pacientes
         </a>
-        <a href="/medicos"
-           class="border border-gray-200 text-gray-700 px-5 py-2.5 rounded-full text-sm font-medium hover:border-blue-500 hover:text-blue-500 transition-colors">
+        <a href="/medicos" class="text-sm font-medium text-gray-500 px-5 py-2.5 rounded-full border border-gray-200 hover:border-gray-400 transition-colors">
           Para médicos
         </a>
       </div>
     </div>
   </section>
 
-  <!-- BLOG GENERAL -->
+  <!-- FEATURED + GRID -->
   {blogPosts.length > 0 && (
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-xl font-semibold text-gray-900">Para pacientes</h2>
-          <p class="text-sm text-gray-500 mt-0.5">Evidencia en lenguaje claro</p>
-        </div>
-        <a href="/blog" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Ver todo →</a>
+    <section class="max-w-5xl mx-auto px-5 pb-16">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Para pacientes</h2>
+        <a href="/blog" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">Ver todo →</a>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {blogPosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="group border border-gray-100 rounded-2xl p-5 hover:border-red-200 hover:shadow-sm transition-all">
-            <span class="text-xs text-red-500 font-medium uppercase tracking-wide">{post.data.category}</span>
-            <h3 class="font-semibold text-gray-900 mt-2 mb-2 group-hover:text-red-500 transition-colors leading-snug">{post.data.title}</h3>
-            <p class="text-sm text-gray-500 line-clamp-2">{post.data.description}</p>
-            <p class="text-xs text-gray-400 mt-3">{formatDate(post.data.pubDate)}</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-4">
+        <!-- Featured article — grande -->
+        {featuredPost && (
+          <a href={`/blog/${featuredPost.id}`}
+             class="lg:col-span-3 group relative rounded-2xl border border-gray-100 p-6 hover:border-red-200 hover:shadow-md transition-all flex flex-col justify-between min-h-[220px] bg-gradient-to-br from-white to-gray-50/50">
+            <div>
+              <span class="text-xs font-medium text-red-500 uppercase tracking-wide">{featuredPost.data.category}</span>
+              <h3 class="font-lora text-xl sm:text-2xl text-gray-900 mt-2 mb-3 leading-snug group-hover:text-red-500 transition-colors">
+                {featuredPost.data.title}
+              </h3>
+              <p class="text-sm text-gray-500 line-clamp-2">{featuredPost.data.description}</p>
+            </div>
+            <div class="flex items-center justify-between mt-5">
+              <span class="text-xs text-gray-400">{formatDate(featuredPost.data.pubDate)}</span>
+              {featuredPost.data.affiliateProducts && featuredPost.data.affiliateProducts.length > 0 && (
+                <span class="text-xs bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full font-medium">
+                  {featuredPost.data.affiliateProducts.length} recomendaciones
+                </span>
+              )}
+            </div>
           </a>
-        ))}
+        )}
+
+        <!-- Articles pequeños -->
+        <div class="lg:col-span-2 flex flex-col gap-4">
+          {restPosts.map((post) => (
+            <a href={`/blog/${post.id}`}
+               class="group rounded-xl border border-gray-100 p-4 hover:border-red-200 hover:shadow-sm transition-all">
+              <span class="text-xs font-medium text-red-400 uppercase tracking-wide">{post.data.category}</span>
+              <h3 class="text-sm font-semibold text-gray-900 mt-1 leading-snug group-hover:text-red-500 transition-colors line-clamp-2">
+                {post.data.title}
+              </h3>
+              <div class="flex items-center justify-between mt-2">
+                <span class="text-xs text-gray-400">{formatDate(post.data.pubDate)}</span>
+                {post.data.affiliateProducts && post.data.affiliateProducts.length > 0 && (
+                  <span class="text-xs text-amber-600">● afiliados</span>
+                )}
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )}
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <!-- DIVIDER -->
+  <div class="max-w-5xl mx-auto px-5">
     <div class="border-t border-gray-100"></div>
   </div>
 
-  <!-- BLOG MÉDICOS -->
+  <!-- MÉDICOS -->
   {medicosPosts.length > 0 && (
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-xl font-semibold text-gray-900">Para médicos</h2>
-          <p class="text-sm text-gray-500 mt-0.5">Guías, estudios y práctica clínica</p>
-        </div>
-        <a href="/medicos" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">Ver todo →</a>
+    <section class="max-w-5xl mx-auto px-5 py-16">
+      <div class="flex items-baseline justify-between mb-6">
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider">Para médicos</h2>
+        <a href="/medicos" class="text-sm text-gray-400 hover:text-gray-700 transition-colors">Ver todo →</a>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {medicosPosts.map((post) => (
-          <a href={`/medicos/${post.id}`} class="group border border-gray-100 rounded-2xl p-5 hover:border-blue-200 hover:shadow-sm transition-all">
-            <span class="text-xs text-blue-500 font-medium uppercase tracking-wide">{post.data.specialty}</span>
-            {post.data.evidenceLevel && (
-              <span class="ml-2 text-xs bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-medium">Evidencia {post.data.evidenceLevel}</span>
+          <a href={`/medicos/${post.id}`}
+             class="group rounded-xl border border-gray-100 p-5 hover:border-blue-200 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-medium text-blue-500 uppercase tracking-wide">{post.data.specialty}</span>
+              {post.data.evidenceLevel && (
+                <span class="text-xs bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded font-medium">
+                  Evidencia {post.data.evidenceLevel}
+                </span>
+              )}
+            </div>
+            <h3 class="text-sm font-semibold text-gray-900 leading-snug group-hover:text-blue-500 transition-colors mb-2">
+              {post.data.title}
+            </h3>
+            {post.data.guidelines && post.data.guidelines.length > 0 && (
+              <div class="flex flex-wrap gap-1 mt-3">
+                {post.data.guidelines.map((g: string) => (
+                  <span class="text-xs border border-blue-100 text-blue-400 px-2 py-0.5 rounded">{g}</span>
+                ))}
+              </div>
             )}
-            <h3 class="font-semibold text-gray-900 mt-2 mb-2 group-hover:text-blue-500 transition-colors leading-snug">{post.data.title}</h3>
-            <p class="text-sm text-gray-500 line-clamp-2">{post.data.description}</p>
-            <p class="text-xs text-gray-400 mt-3">{formatDate(post.data.pubDate)}</p>
           </a>
         ))}
       </div>
     </section>
   )}
 
-  <!-- QUIÉN SOY — breve, sin protagonismo -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="border-t border-gray-100 pt-12 flex flex-col sm:flex-row items-start gap-8">
-      <!-- Avatar CM -->
+  <!-- SOBRE MÍ -->
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="border-t border-gray-100"></div>
+  </div>
+  <section class="max-w-5xl mx-auto px-5 py-16">
+    <div class="flex flex-col sm:flex-row gap-6 items-start">
       <div class="shrink-0">
-        <div class="w-16 h-16 rounded-2xl bg-gray-900 flex flex-col items-center justify-center gap-0.5">
-          <span class="text-red-500 font-bold text-lg font-serif leading-none">CM</span>
-          <svg viewBox="0 0 40 8" class="w-8 opacity-70">
-            <polyline points="0,4 6,4 8,1 10,7 12,0 14,4 18,4 20,2 22,4 40,4"
-              fill="none" stroke="#FF3A3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="w-14 h-14 rounded-2xl bg-gray-900 flex flex-col items-center justify-center">
+          <svg viewBox="0 0 56 56" class="w-full h-full">
+            <text x="28" y="30" font-family="Georgia,serif" font-size="16" font-weight="700"
+                  fill="#FF3A3A" text-anchor="middle">CM</text>
+            <polyline points="8,40 14,40 17,34 20,46 23,29 26,40 32,40 35,36 38,40 48,40"
+                      fill="none" stroke="#FF3A3A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
       </div>
-      <!-- Bio -->
       <div class="flex-1">
-        <h3 class="font-semibold text-gray-900 mb-1">Dr. Cristian Miranda</h3>
-        <p class="text-sm text-gray-500 leading-relaxed max-w-xl">
-          Médico colombiano en España, preparando el MIR 2026. Escribo sobre salud basada en evidencia porque creo que la información médica rigurosa debería llegar a todos, sin bulos ni sensacionalismo. Todo lo que publico aquí tiene referencia científica.
+        <p class="font-semibold text-gray-900 mb-1">Dr. Cristian Miranda</p>
+        <p class="text-sm text-gray-500 leading-relaxed max-w-lg">
+          Médico colombiano en España preparando el MIR 2026. Escribo sobre salud basada en evidencia porque creo que la información médica rigurosa debe llegar a todos, sin bulos ni sensacionalismo. Todo lo que publico aquí tiene referencia científica.
         </p>
-        <div class="flex flex-wrap gap-3 mt-4">
-          <a href="https://linkedin.com/in/cristian-miranda-med" target="_blank"
-             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">LinkedIn</a>
-          <a href="https://x.com/cristianmirandamd" target="_blank"
-             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">X / Twitter</a>
-          <a href="https://instagram.com/cristianmirandamd" target="_blank"
-             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">Instagram</a>
-          <a href="https://tiktok.com/@cristianmirandamd" target="_blank"
-             class="text-xs text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 rounded-full px-3 py-1.5">TikTok</a>
+        <div class="flex flex-wrap gap-2 mt-4">
+          {[
+            { label: 'LinkedIn', href: 'https://linkedin.com/in/cristian-miranda-med' },
+            { label: 'X', href: 'https://x.com/cristianmirandamd' },
+            { label: 'Instagram', href: 'https://instagram.com/cristianmirandamd' },
+            { label: 'TikTok', href: 'https://tiktok.com/@cristianmirandamd' },
+          ].map(({ label, href }) => (
+            <a href={href} target="_blank"
+               class="text-xs text-gray-500 border border-gray-200 rounded-full px-3 py-1.5 hover:border-gray-400 hover:text-gray-900 transition-colors">
+              {label}
+            </a>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="bg-gray-50 rounded-3xl p-8 sm:p-12 text-center">
-      <h2 class="font-lora text-2xl sm:text-3xl font-semibold text-gray-900 mb-3">
-        Un artículo con evidencia real, cada semana.
-      </h2>
-      <p class="text-gray-500 mb-6 max-w-md mx-auto">Sin bulos. Sin sensacionalismo. Solo lo que dice la ciencia.</p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-sm mx-auto">
+  <!-- CTA NEWSLETTER -->
+  <div class="max-w-5xl mx-auto px-5 pb-20">
+    <div class="rounded-3xl bg-gray-950 px-8 py-10 sm:px-12 text-center">
+      <p class="font-lora text-2xl sm:text-3xl text-white mb-2">Un artículo con evidencia real,<br/>cada semana.</p>
+      <p class="text-gray-400 text-sm mb-7">Sin bulos. Sin sensacionalismo. Solo lo que dice la ciencia.</p>
+      <div class="flex flex-col sm:flex-row gap-2 justify-center max-w-xs mx-auto">
         <input type="email" placeholder="tu@email.com"
-               class="border border-gray-200 rounded-full px-4 py-2.5 text-sm flex-1 outline-none focus:border-gray-400" />
-        <button class="bg-gray-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-red-500 transition-colors whitespace-nowrap">
+               class="bg-white/10 border border-white/20 text-white placeholder-gray-500 rounded-full px-4 py-2.5 text-sm flex-1 outline-none focus:border-white/50 transition-colors" />
+        <button class="bg-red-500 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-red-400 transition-colors whitespace-nowrap">
           Suscribirse
         </button>
       </div>
     </div>
-  </section>
+  </div>
 
 </Layout>
