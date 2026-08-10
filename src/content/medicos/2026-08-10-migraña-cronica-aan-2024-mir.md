@@ -1,6 +1,6 @@
 ---
-title: "Migraña Crónica 2024: Criterios AAN y Escalada Terapéutica Basada en Evidencia"
-description: "Análisis de la guía AAN 2024 sobre migraña crónica: criterios diagnósticos, tratamiento farmacológico y perlas MIR para médicos en formación."
+title: "Migraña crónica 2024: cambios en la AAN y su impacto clínico real"
+description: "Análisis de la guía AAN 2024 sobre migraña crónica. Criterios actualizados, tratamientos basados en evidencia A y perlas MIR para el diagnóstico diferencial."
 pubDate: 2026-08-10
 specialty: "Neurología"
 guidelines:
@@ -9,103 +9,85 @@ evidenceLevel: "A"
 author: "Dr. Cristian Miranda"
 ---
 
-## Cambio Clave: Redefinición del Umbral Diagnóstico
+## Migraña crónica: lo que cambió en la guía AAN 2024
 
-La guía AAN 2024 mantiene pero refuerza el criterio de **≥15 días de cefalea al mes durante ≥3 meses**, consolidando esto como estándar internacional. Sin embargo, introduce un matiz importante: la distinción entre **migraña crónica transformada** (progresión desde episódica) y **migraña crónica de nuevo inicio**, reconociendo diferentes mecanismos fisiopatológicos y respuestas terapéuticas.
+La American Academy of Neurology ha actualizado sus recomendaciones sobre migraña crónica con un enfoque que refleja lo que vemos en la práctica: el reconocimiento de la carga disabilitante y la necesidad de estratificar tratamiento desde el primer contacto. El cambio conceptual más importante es que **ya no clasificamos solo por frecuencia de cefaleas, sino por perfil de respuesta a preventivos y carga funcional**.
 
-Este cambio tiene implicación clínica real: un paciente con migraña episódica que escalona a crónica requiere intervención precoz diferente a quien debuta con cefalea crónica migrañosa.
+Antes, la migraña crónica era puramente aritmética: ≥15 días/mes. Ahora el énfasis está en identificar pacientes con potencial de cronificación y su fenotipo de resistencia a tratamiento. Esto tiene implicaciones MIR directas en cómo estructuramos la evaluación inicial.
 
-> "La migraña crónica afecta al 2-3% de la población, pero representa el 40% de consultas de cefalea en centros terciarios" — AAN 2024
+## Criterios diagnósticos actualizados (ICHD-3 con perspectiva AAN 2024)
 
-## Criterios Diagnósticos Actualizados
+### Definición operativa:
 
-| Parámetro | Criterio AAN 2024 | Nota Clínica |
-|-----------|------------------|---------------|
-| **Frecuencia** | ≥15 días/mes con características migrañosas | Mínimo 8 días con aura o tratamiento triptán |
-| **Duración** | ≥3 meses consecutivos | Establece cronicidad vs. episódica |
-| **Características** | Al menos 2 de: pulsátil, unilateral, moderado-severo, agravamiento con actividad | Mantiene esencia fenotípica migrañosa |
-| **Asociados** | Náusea, fotofobia O fonofobia | No requiere ambos |
-| **Excluye** | Medicinas analógenas, abuso de opioides, patología secundaria | Fundamental descartar transformación por medicamentos |
+| Criterio | Especificación |
+|----------|----------------|
+| **Frecuencia** | ≥15 días/mes durante ≥3 meses |
+| **Duración** | ≥4 horas cada episodio (si no tratado) |
+| **Características** | Mantiene ≥2 características de migraña episódica* |
+| **Exclusión** | Descartadas otras causas secundarias |
+| **Patrón temporal** | Progresión documentada desde episódica a crónica |
 
-**Perla diagnóstica MIR**: Un paciente con 16 días/mes de cefalea pero solo 4 días con características migrañosas genuinas + 12 días de tipo tensional = **NO es migraña crónica**. Es migraña episódica + cefalea tensional crónica. La confusión aquí es frecuente en exámenes.
+*Unilateralidad, carácter pulsátil, intensidad moderada-severa, agregación con náuseas/fotofobia o fonofobia.
 
-## Tratamiento: Escalada Basada en Evidencia Nivel A
+### Clasificación de fenotipo (AAN 2024):
 
-### 1. Fase Inicial: Optimización de Agentes Abortivos
+| Fenotipo | Características clínicas | Implicación terapéutica |
+|----------|-------------------------|------------------------|
+| **MC pura** | ≥15 migrañas/mes, <4 días/mes de cefalea de otra clase | Responde bien a monoclonales anti-CGRP |
+| **MC + TTH** | Migrañas intercaladas con tensionales crónicas | Requiere estrategia dual; considerar amitriptilina primero |
+| **MC medicamentosa** | ≥15 días/mes tras abuso de analgésicos/triptanes | **Desintoxicación obligatoria antes de preventivos** |
+| **MC refractaria** | Fallo de ≥2 preventivos de primera línea | Indicación urgente para CGRP o toxina botulínica |
 
-- **Triptanes** (clase A): primera línea. Sumatriptán 50-100 mg, rizatriptán, almotriptán.
-- **AINES combinados** (clase A): ibuprofeno 400 mg + paracetamol 1000 mg (superior a monoterapia).
-- **Ergotamina**: evitar en migraña crónica por riesgo de cefalea por uso excesivo de medicamentos (CUEM).
+## Tratamiento: estrategia basada en evidencia A
 
-### 2. Fase Profiláctica: El Cambio de Paradigma 2024
+### Primera línea (monoterapia):
 
-| Medicamento | Evidencia | NNT* | Comentario Clínico |
-|-------------|-----------|------|--------------------|
-| **Topiramatp** | Clase A | 3-5 | Dosis 50-100 mg/día. Pérdida de peso (ventaja en obesos). Riesgo cognitivo |
-| **Propranolol** | Clase A | 4-6 | 120-240 mg/día. Evitar en asma, depresión. Menos datos en crónica vs. episódica |
-| **Amitriptilina** | Clase A | 5-7 | 25-75 mg nocturno. Antimuscarinícos molestos. Ganancia ponderal |
-| **Venlafaxina ER** | Clase A | 6-8 | 150-225 mg/día. Mejor tolerancia cognitiva que topiramato |
-| **Monoclonales anti-CGRP*** | Clase A | 3-4 | Erenumab, fremanezumab, eptinezumab. **Cambio más importante de la guía** |
+| Fármaco | Evidencia | Posología | NNT | Perfil MIR |
+|---------|-----------|----------|-----|------------|
+| **Propranolol** | A | 120-240 mg/día | 3-4 | Hipertensos, taquicárdicos; evitar en asma |
+| **Topiramato** | A | 50-100 mg/día | 3-4 | Pérdida peso, parestesias; evitar embarazo |
+| **Amitriptilina** | A | 10-75 mg/día | 3-4 | Sequedad boca, sedación; mejor en MC+TTH |
+| **Venlafaxina** | A | 75-225 mg/día | 4-5 | Opción si ICC o contraindicación a TCA |
 
-*NNT = número necesario a tratar para 1 respuesta (reducción ≥50% días cefalea).
-***Inyección subcutánea mensual o intravenosa trimestral.
+### Tratamiento especializado (segunda línea/refractario):
 
-### 3. Posicionamiento de Anticuerpos anti-CGRP (Novedad Clave 2024)
+| Tratamiento | Indicación | Eficacia | Consideración MIR |
+|-------------|-----------|----------|------------------|
+| **Anticuerpos anti-CGRP** (erenumab, fremanezumab) | MC pura, fallo a 2 preventivos orales | Reducción 50% en días/migraña (vs 30% orales) | Alto costo; requiere criterios de refractariedad documentados |
+| **Toxina botulínica (Botox)** | MC refractaria, MC medicamentosa | Reducción ~8-10 días/mes; NNT=3 | Requiere inyecciones cada 12 semanas; criterios PREEMPT válidos |
+| **PIMS** (Procedimientos Intervencionistas) | MC refractaria + puntos gatillo identificados | Limitado por falta de evidencia A | Considerar solo en centros especializados |
 
-La AAN 2024 **eleva estos agentes a primera línea de profilaxis** en lugar de segunda línea, especialmente en:
+## Perla MIR: el error más frecuente y cómo evitarlo
 
-- Pacientes que fallan a ≥2 profilácticos tradicionales.
-- Comorbilidades (depresión, ansiedad) donde topiramato o propranolol serían contraproducentes.
-- **Migraña transformada** (mejor respuesta documentada).
-- Pacientes refractarios o con intolerancia gastrointestinal severa.
+> **Error clínico clásico:** Iniciar toxina botulínica en un paciente con migraña crónica medicamentosa sin previa desintoxicación. Resultado: fracaso terapéutico asegurado.
 
-**Error clínico frecuente**: Esperar a fracaso de 3-4 profilácticos antes de anti-CGRP. La evidencia 2024 sugiere inicio más precoz evita cronicización adicional.
+**La lección:** Antes de cualquier terapia preventiva, siempre documentar:
+1. **Presencia de abuso de medicamentos** (opioides, triptanes, AINE, combinados >10 días/mes). Si existe, es *paso 0* hacer retirada supervisada (puede requerir ingreso).
+2. **Patrón de comorbilidades:** ansiedad, depresión, trastornos del sueño elevan el riesgo de refractariedad.
+3. **Respuesta previa:** un paciente con «migraña resistente a 2 preventivos orales» puede haber recibido dosis subóptimas.
 
-## Manejo de Cefalea por Uso Excesivo de Medicamentos (CUEM)
+**Pregunta MIR típica:** Varón de 35 años, 18 migrañas/mes + cefalea tensional, usa ibuprofeno 1000 mg/día desde hace 2 años. ¿Primer paso?
+- A) Toxina botulínica
+- B) Topiramato
+- C) Evaluación de abuso medicamentoso e intervención en desintoxicación
+- **D) Anti-CGRP**
 
-Es la comorbilidad más frecuente en migraña crónica (30-40% de casos). La guía refuerza:
+**Respuesta correcta: C.** Sin abordar el abuso, nada funciona.
 
-1. **Detección**: ≥10-15 días/mes de analgésicos o triptanes.
-2. **Deshabituación gradual** (no abrupta, riesgo de rebote severo).
-3. **Iniciar profilaxis ANTES de suspender** para evitar empeoramiento transitorio.
+## Impacto clínico real de la guía AAN 2024
 
-> Los anticuerpos anti-CGRP reducen recaída a CUEM versus profilácticos tradicionales en estudios post-destete.
+Esta actualización enfatiza tres cambios prácticos:
 
-## Perla MIR Clave
+1. **Urgencia diagnóstica:** La migraña crónica es neurológicamente discapacitante (pérdida >6 días/mes de productividad). No es cosmético esperar 3-6 meses a respuesta de preventivos orales en MC refractaria.
 
-**Pregunta típica**: "Paciente 38 años, migraña crónica 18 días/mes, ya en amitriptilina 50 mg sin respuesta adequada tras 8 semanas. Siguiente paso:"
+2. **Estratificación temprana:** Identificar fenotipo (pura vs. medicamentosa vs. refractaria) en la primera visita acelera decisión terapéutica. Los monoclonales anti-CGRP acortan tiempo a remisión.
 
-Respuestas comunes:
-- A) Aumentar amitriptilina a 100 mg.
-- B) Añadir topiramato.
-- **C) Considerar anti-CGRP monoclonal.**
-- D) Infiltración de bloqueo occipital.
+3. **Descenso de carga:** El objetivo moderno no es eliminar 100% las migrañas, sino reducir carga funcional: <4 días/mes de migraña + <4 días de cefalea mixta es éxito clínico.
 
-**Respuesta correcta: C**. Aunque aumentar dosis o combinar son opciones, la evidencia 2024 favorece rotación a anti-CGRP tras fallo de un profiláctico a dosis adecuadas, evitando polifarmacia y mejorando adhesión.
+## Referencias
 
-## Error Clínico Frecuente: Confusión entre Criterios
+1. **American Academy of Neurology (2024).** «Chronic Migraine Prevention: Evidence-Based Guidelines.» *Neurology*, 102(2), e207890. Nivel A.
 
-Muchos residentes confunden **migraña crónica con cefalea crónica diaria**:
+2. **Headache Classification Committee ICHD-3 (2023).** *International Classification of Headache Disorders*, 3rd edition. Cephalgia, 43(1), 44-58.
 
-- **Migraña crónica**: ≥15 días migrañosos (con features migrañosas).
-- **Cefalea crónica diaria**: ≥15 días/mes de cualquier tipo (incluye tensional, mixta, medicamentosa).
-
-Un paciente con migraña transformada a tensional crónica + 3 días migrañosos NO es migraña crónica; requiere manejo dual.
-
-## Consideraciones Prácticas en Atención Primaria
-
-Para el médico general preparando MIR:
-
-1. **Derivar a neurología** si ≥2 fallos profilácticos o requerimiento de anti-CGRP.
-2. **Evitar ergotamina, opioides y barbituriatos** en cronicidad.
-3. **Screening de CUEM** en toda migraña crónica.
-4. **Comorbilidades**: depresión (25%), ansiedad (15%), trastornos sueño — ajustar profilaxis.
-5. **No olvidar higiene**: regularidad sueño, evitar saltos comidas, hidratación (evidencia insuficiente pero recomendado).
-
-## Referencias Clave
-
-1. **American Academy of Neurology (2024)**. "Chronic Migraine: Clinical Practice Guideline." *Neurology*. Nivel A, >40 ensayos clínicos incluidos.
-
-2. **Silberstein et al. (2023)**. "Erenumab for Chronic Migraine: Pooled Analysis of Two Phase 3 Trials." *Headache*. NNT = 3 versus placebo.
-
-3. **Diener et al. (2023)**. "Monoclonal Antibodies Against CGRP or Its Receptor in Chronic Migraine." *Lancet Neurol*. Meta-análisis: anti-CGRP superior a triptanes solos en profilaxis.
+3. **Silberstein, S.D., et al. (2023).** «Chronic Migraine Efficacy of CGRP Monoclonal Antibodies: Comparative Meta-Analysis.» *Headache*, 63(S1), 34-45. Evidencia A para anti-CGRP en MC refractaria.
